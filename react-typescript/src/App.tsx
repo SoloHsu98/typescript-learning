@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./App.css";
 import Greet from "./components/Greet";
@@ -7,8 +7,11 @@ import { PersonList } from "./components/PersonList";
 import Status from "./components/status";
 import Heading from "./components/Heading";
 import Oscar from "./components/Oscar";
+import Button from "./components/Button";
+import Input from "./components/input";
 
 function App() {
+  const [inputValue, setInputValue] = useState("");
   const personName = {
     first: "Solo",
     last: "Hsu",
@@ -38,6 +41,11 @@ function App() {
         <Heading>Oscar go to Solo Hsu</Heading>
       </Oscar>
       <Greet name="Solo" isLoggedIn={false} />
+      <Button handleClick={(event, id) => console.log("click", event, id)} />
+      <Input
+        value={inputValue}
+        handleChange={(event) => setInputValue(event.target.value)}
+      />
     </div>
   );
 }
