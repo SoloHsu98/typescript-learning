@@ -9,6 +9,7 @@ import Heading from "./components/Heading";
 import Oscar from "./components/Oscar";
 import Button from "./components/Button";
 import Input from "./components/input";
+import Container from "./components/Container";
 
 function App() {
   const [inputValue, setInputValue] = useState("");
@@ -46,6 +47,7 @@ function App() {
         value={inputValue}
         handleChange={(event) => setInputValue(event.target.value)}
       />
+      <Container styles={{ border: "1px solid black", padding: "1rem" }} />
     </div>
   );
 }
